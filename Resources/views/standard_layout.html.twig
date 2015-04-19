@@ -35,6 +35,9 @@ file that was distributed with this source code.
                         <link rel="stylesheet" href="{{ asset(stylesheet) }}">
                 {% endfor %}
             {% endif %}
+            {% if admin_pool.getOption('rtl_detection') is sameas(true) && (isRtl(app.request.get('locale'))) %}
+                <link href="{{ asset('bundles/sonataadmin/vendor/AdminLTE/css/AdminLTE-rtl.css') }}" /> 
+            {% endif %}
         {% endblock %}
 
         {% block javascripts %}
