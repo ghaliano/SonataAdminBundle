@@ -59,14 +59,4 @@ class GlobalVariables
 
         return $this->getAdminPool()->getAdminByAdminCode($code)->generateUrl($action, $parameters, $absolute);
     }
-
-    /**
-     * @param string $locale
-     *
-     * @return boolean
-     */
-    public function isRtl($locale)
-    {
-        return in_array($locale, array('ar'));
-    }
 }
