@@ -77,6 +77,7 @@ class Configuration implements ConfigurationInterface
                     ->children()
                         ->booleanNode('html5_validate')->defaultValue(true)->end()
                         ->booleanNode('confirm_exit')->defaultValue(true)->end()
+                        ->booleanNode('rtl_detection')->defaultValue(false)->end()
                         ->booleanNode('use_select2')->defaultValue(true)->end()
                         ->booleanNode('use_icheck')->defaultValue(true)->end()
                         ->integerNode('pager_links')->defaultValue(null)->end()
