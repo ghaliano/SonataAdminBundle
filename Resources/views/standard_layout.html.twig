@@ -20,6 +20,7 @@ file that was distributed with this source code.
 {% set _actions              = block('actions') %}
 {% set _navbar_title         = block('navbar_title') %}
 {% set _list_filters_actions = block('list_filters_actions') %}
+{% set is_rtl = admin_pool.getOption('rtl_detection') is sameas(true) && (isRtl(app.request.get('locale')) %}
 
 <!DOCTYPE html>
 <html {% block html_attributes %}class="no-js"{% endblock %}>
@@ -35,9 +36,7 @@ file that was distributed with this source code.
                         <link rel="stylesheet" href="{{ asset(stylesheet) }}">
                 {% endfor %}
             {% endif %}
-            {% if admin_pool.getOption('rtl_detection') is sameas(true) && (isRtl(app.request.get('locale'))) %}
-                <link href="{{ asset('bundles/sonataadmin/vendor/AdminLTE/css/AdminLTE-rtl.css') }}" /> 
-            {% endif %}
+            <link href="{{ asset('bundles/sonataadmin/vendor/AdminLTE/css/AdminLTE'~(is_rtl?'-rtl':'')~'.css') }}" />
         {% endblock %}
 
         {% block javascripts %}
