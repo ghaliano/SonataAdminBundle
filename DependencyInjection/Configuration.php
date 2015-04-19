@@ -277,7 +277,6 @@ class Configuration implements ConfigurationInterface
                                 'bundles/sonatacore/vendor/bootstrap/dist/css/bootstrap.min.css',
                                 'bundles/sonatacore/vendor/components-font-awesome/css/font-awesome.min.css',
                                 'bundles/sonatacore/vendor/ionicons/css/ionicons.min.css',
-                                'bundles/sonataadmin/vendor/admin-lte/dist/css/AdminLTE.min.css',
                                 'bundles/sonataadmin/vendor/admin-lte/dist/css/skins/skin-black.min.css',
                                 'bundles/sonataadmin/vendor/iCheck/skins/flat/blue.css',
 
