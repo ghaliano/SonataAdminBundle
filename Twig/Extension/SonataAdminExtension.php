@@ -101,6 +101,7 @@ class SonataAdminExtension extends \Twig_Extension
     {
         return array(
             'sonata_knp_menu_build' => new \Twig_Function_Method($this, 'getKnpMenu'),
+            'is_rtl' => new \Twig_Function_Method($this, 'isRtl'),
         );
     }
 
@@ -453,5 +454,33 @@ class SonataAdminExtension extends \Twig_Extension
         }
 
         return $menu;
+    }
+    
+    /**
+     * Based on http://en.wikipedia.org/wiki/Right-to-left
+     * 'ar' => 'العربية', Arabic
+     * 'arc' => 'ܐܪܡܝܐ', Aramaic
+     * 'bcc' => 'بلوچی مکرانی', Southern Balochi
+     * 'bqi' => 'بختياري', Bakthiari
+     * 'ckb' => 'Soranî / کوردی', Sorani
+     * 'dv' => 'ދިވެހިބަސް', Dhivehi
+     * 'fa' => 'فارسی', Persian
+     * 'glk' => 'گیلکی', Gilaki
+     * 'he' => 'עברית', Hebrew
+     * 'ku' => 'Kurdî / كوردی', Kurdish
+     * 'mzn' => 'مازِرونی', Mazanderani
+     * 'pnb' => 'پنجابی', Western Punjabi
+     * 'ps' => 'پښتو', Pashto,
+     * 'sd' => 'سنڌي', Sindhi
+     * 'ug' => 'Uyghurche / ئۇيغۇرچە', Uyghur
+     * 'ur' => 'اردو', Urdu
+     * 'yi' => 'ייִדיש', Yiddish
+     * @param string $locale
+     *
+     * @return boolean
+     */
+    public function isRtl($locale)
+    {
+        return in_array($locale, array('ar', 'arc', 'bcc', 'bqi', 'ckb', 'dv', 'fa', 'glk', 'he', 'ku', 'mzn', 'pnb', 'ps', 'sd', 'ug', 'ur', 'yi'));
     }
 }
